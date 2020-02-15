@@ -1,18 +1,21 @@
 {
 	"name" : "lushobarlett/cologger",
 	"description" : "simple logger",
+	"keywords" : ["log", "logging", "logger", "color"]
 	"requires" : {
 		"php" : "^7.3.0"
 	},
 	"license" : "MIT",
-	"authors" : {
-		"name" : "Luciano Barletta",
-		"email" : "lushobarlett@gmail.com",
-		"role" : "Developer"
-	},
+	"authors" : [
+		{
+			"name" : "Luciano Barletta",
+			"email" : "lushobarlett@gmail.com",
+			"role" : "Developer"
+		}
+	],
 	"autoload" : {
 		"psr-4" : {
-			"Cologger" : "src"
+			"Cologger\\" : "src/"
 		}
 	}
 }
