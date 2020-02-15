@@ -1,6 +1,6 @@
-# PHP Logger
+# CoLogger
 
-Very simple PHP Logger
+Very simple PHP Logger with colors
 
 ## Use
 
@@ -29,3 +29,4 @@ Errors will be red, Warnings will be orange, Notices will be green and Logs will
 - Formatting the log metadata.
 - Changing the color scheme.
 - Adding color to the message itself (without doing it by hand)
+- Quick and better way to change logging targets
