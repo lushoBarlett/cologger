@@ -1,6 +1,6 @@
 <?php
 
-namespace PoliServer;
+namespace Cologger;
 
 class Logger {
 
