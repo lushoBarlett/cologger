@@ -1,7 +1,7 @@
 {
 	"name" : "lushobarlett/cologger",
 	"description" : "simple logger",
-	"keywords" : ["log", "logging", "logger", "color"]
+	"keywords" : ["log", "logging", "logger", "color"],
 	"requires" : {
 		"php" : "^7.3.0"
 	},
