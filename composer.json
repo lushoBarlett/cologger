@@ -1,0 +1,18 @@
+{
+	"name" : "lushobarlett/color-logger",
+	"description" : "simple logger",
+	"requires" : {
+		"php" : "^7.3.0"
+	},
+	"license" : "MIT",
+	"authors" : {
+		"name" : "Luciano Barletta",
+		"email" : "lushobarlett@gmail.com",
+		"role" : "Developer"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Cologger" : "src"
+		}
+	}
+}
