@@ -1,5 +1,5 @@
 {
-	"name" : "lushobarlett/color-logger",
+	"name" : "lushobarlett/cologger",
 	"description" : "simple logger",
 	"requires" : {
 		"php" : "^7.3.0"
