@@ -2,8 +2,11 @@
 	"name" : "lushobarlett/cologger",
 	"description" : "simple logger",
 	"keywords" : ["log", "logging", "logger", "color"],
-	"requires" : {
+	"require" : {
 		"php" : "^7.3.0"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : "^6"	
 	},
 	"license" : "MIT",
 	"authors" : [

@@ -4,16 +4,24 @@ namespace Cologger;
 
 class Logger {
 
-	public static $logf = __DIR__ . DIRECTORY_SEPARATOR . "logger.log";
-	public static $console = false;
+	private $file;
+	private $console;
 
-	private static function append(string $message) : bool {
-		if (self::$console) {
+	public function __construct(
+		string $file = __DIR__ . DIRECTORY_SEPARATOR . "cologger.log",
+		bool $console = false
+	) {
+		$this->file = $file;
+		$this->console = $console;
+	}
+
+	private function append(string $message) : bool {
+		if ($this->console) {
 			echo $message . "\n";
 			return true;
 		}
 		$b = file_put_contents(
-			self::$logf,
+			$this->file,
 			$message . "\n",
 			FILE_APPEND
 		);
@@ -22,36 +30,36 @@ class Logger {
 		return true;
 	}
 
-	private static function date() : string {
+	private function date() : string {
 		return date( 
 			"[Y-m-d D] [H:i:s O]"
 		);
 	}
 
-	public static function error(string $error) : void {
-		$date = self::date();
-		self::append(
+	public function error(string $error) : void {
+		$date = $this->date();
+		$this->append(
 			"\e[1;31mERROR\t$date:\e[m $error"
 		);
 	}
 
-	public static function warning(string $warning) : void {
-		$date = self::date();
-		self::append(
+	public function warning(string $warning) : void {
+		$date = $this->date();
+		$this->append(
 			"\e[1;33mWARNING\t$date:\e[m $warning"
 		);
 	}
 
-	public static function notice(string $notice) : void {
-		$date = self::date();
-		self::append(
+	public function notice(string $notice) : void {
+		$date = $this->date();
+		$this->append(
 			"\e[1;32mNOTICE\t$date:\e[m $notice"
 		);
 	}
 
-	public static function log(string $log) : void {
-		$date = self::date();
-		self::append(
+	public function log(string $log) : void {
+		$date = $this->date();
+		$this->append(
 			"\e[1;37mLOG\t$date:\e[m $log"
 		);
 	}
