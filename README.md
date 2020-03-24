@@ -4,11 +4,9 @@ Very simple PHP Logger with colors
 
 ## Use
 
-By default the logger will output to a file in the directory that the file resides in with the name 'logger.log'.
+By default the logger will output to a file in the directory that the file resides in with the name 'cologger.log'.
 
-This can be changed with the `Logger::$logf` static variable.
-
-Alternatively you can choose to output everything to the console, by changing the `Logger::$console` to true.
+This (and console output) can be changed.
 
 The class uses Linux console text modifiers ( \e[...m ), this has not been tested on Windows.
 
@@ -17,12 +15,23 @@ Notice: to write to a file, the process trying to do it needs to have file creat
 ### Functions
 
 ```php
-Logger::error("error");
-Logger::warning("warning");
-Logger::notice("notice");
-Logger::log("normal");
+$logger = new Logger;
+
+$logger->error("error");
+$logger->warning("warning");
+$logger->notice("notice");
+$logger->log("normal");
 ```
 Errors will be red, Warnings will be orange, Notices will be green and Logs will be white. Each log will be placed in a new line with data about the date and time of logging.
+
+### Parameters
+
+The first parameter is a string representing the location of the file. The second argument is a boolean, defaulted to false, to write to console instead.
+```php
+$logger = new Logger("mytarget.log");
+
+$console = new Logger("doesn't matter", true);
+```
 
 ## Future Features
 
